@@ -18,13 +18,23 @@
   font-weight: 600;
   border: none;
   border-bottom: 4px solid grey;
-
   line-height: 0.75;
 }
 
 #form-bottom {
-  padding-top: 1em;
+  margin-top: 0.5em;
   display: flex;
   justify-content: space-between;
   font-family: 'Bungee', sans-serif;
+  align-items: baseline;
+}
+
+#submit-tweet {
+  background-color: #4056A1;
+  color: white;
+  border: none;
+  width: 14%;
+  height: 1.5em;
+  border-radius: 4px;
+  flex-grow: 0.02;
 }
