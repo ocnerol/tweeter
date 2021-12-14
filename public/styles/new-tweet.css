@@ -1,3 +1,30 @@
 .new-tweet {
   display: flex;
+  justify-content: center;
+  background-color: inherit;
+}
+
+#tweet-form {
+  padding: 1em;
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: inherit;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#tweet-text {
+  background-color: inherit;
+  font-weight: 600;
+  border: none;
+  border-bottom: 4px solid grey;
+
+  line-height: 0.75;
+}
+
+#form-bottom {
+  padding-top: 1em;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', sans-serif;
 }
