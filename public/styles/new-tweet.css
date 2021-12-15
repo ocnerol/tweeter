@@ -37,3 +37,7 @@
   border-radius: 4px;
   flex-grow: 0.02;
 }
+
+.negative-value {
+  color: red;
+}
