@@ -69,3 +69,7 @@ p.tweet-content {
 i {
   color: #4056a1;
 }
+
+i:hover {
+  color: #ead45f;
+}
