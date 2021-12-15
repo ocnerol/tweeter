@@ -46,3 +46,7 @@ p.tweet-content {
   border-bottom: 2px solid black;
   font-weight: 600;
 }
+
+i {
+  color: #4056a1;
+}
