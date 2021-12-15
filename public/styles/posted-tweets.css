@@ -32,7 +32,7 @@ article.tweet header {
 
 .right-nav {
   opacity: 0.60;
-  color: #b4b5d1;
+  color: #cfcfe6;
 }
 
 .avatar {
@@ -65,12 +65,13 @@ p.tweet-content {
 
 .tweet-actions > * {
   padding-left: 10px;
-}
-
-i {
   color: #4056a1;
 }
 
-i:hover {
+i.tweet-actions:hover {
   color: #ead45f;
+}
+
+article.tweet:hover {
+  box-shadow: 10px 10px #cfcfe6;
 }
