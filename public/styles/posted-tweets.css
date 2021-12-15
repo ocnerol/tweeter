@@ -21,11 +21,17 @@ article.tweet header {
   background-color: #f4f1ec;
   background-image: none;
   font-weight: 300;
+  padding-right: 1em;
 }
 
 .left-nav {
   display: flex;
   align-items: center;
+}
+
+.right-nav {
+  opacity: 0.60;
+  color: #b4b5d1;
 }
 
 .avatar {
