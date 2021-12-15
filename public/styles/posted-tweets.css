@@ -45,6 +45,7 @@ p.tweet-content {
   padding: 1em;
   border-bottom: 4px solid grey;
   font-weight: 600;
+  color: grey;
 }
 
 i {
