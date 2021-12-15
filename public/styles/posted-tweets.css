@@ -6,6 +6,7 @@
   border: 4px solid grey;
   padding: 0.5em;
   background-color: transparent;
+  color: grey
 }
 
 article.tweet {
@@ -30,7 +31,8 @@ article.tweet header {
 }
 
 .avatar {
-  padding-right: 0.5em;
+  padding-right: 1em;
+  padding-left: 0.5em;
 }
 
 footer {
@@ -42,4 +44,5 @@ footer {
 p.tweet-content {
   padding: 1em;
   border-bottom: 2px solid black;
+  font-weight: 600;
 }
