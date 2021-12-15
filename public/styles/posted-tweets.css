@@ -20,6 +20,7 @@ article.tweet header {
   justify-content: space-between;
   background-color: #f4f1ec;
   background-image: none;
+  font-weight: 300;
 }
 
 .left-nav {
