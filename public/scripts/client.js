@@ -81,30 +81,35 @@ $(document).ready(() => {
   const loadTweets = () => {
     console.log('fetching tweets ...');
     $.ajax('/tweets', { method: 'GET' })
-    .then(tweets => {
-      return renderTweets(tweets);
-    })
-    .catch(error => console.log('error:', error));
+      .then(tweets => {
+        return renderTweets(tweets);
+      })
+      .catch(error => console.log('error:', error));
   };
 
   $('#tweet-form').submit(function(event) {
     event.preventDefault();
     const inputTweet = $(this).serialize();
+    const inputTextOnly = inputTweet.substring(6);
 
-
-    $.ajax({
-      url: '/tweets/',
-      method: 'POST',
-      data: inputTweet
-    })
-      .then((response) => {
-        console.log('successfully made post request using Ajax!');
-        loadTweets(); 
+    if (inputTextOnly === "") {
+      alert('You cannot submit an empty tweet.')
+    } else if (inputTextOnly.length > 140) {
+      alert('Your tweet exceeds the maximum character limit :(');
+    } else {
+      $.ajax({
+        url: '/tweets/',
+        method: 'POST',
+        data: inputTweet
       })
-      .catch((error) => {
-        console.log('error:', error);
-      });
-
+        .then((response) => {
+          console.log('successfully made post request using Ajax!');
+          loadTweets();
+        })
+        .catch((error) => {
+          console.log('error:', error);
+        });
+    }
 
   });
 });
