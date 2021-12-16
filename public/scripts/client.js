@@ -43,7 +43,9 @@ $(document).ready(() => {
   const renderTweets = (tweetObjectsArray) => {
     const $tweetsContainer = $('.posted-tweets');
     const $tweet = tweet => createTweetElement(tweet);
-    tweetObjectsArray.forEach(tweet => $tweetsContainer.append($tweet(tweet)));
+    tweetObjectsArray.forEach(tweet => {
+        $tweetsContainer.append($tweet(tweet))
+    });
   };
 
   //renderTweets(data);
@@ -61,7 +63,8 @@ $(document).ready(() => {
   $('#tweet-form').submit(function(event) {
     event.preventDefault();
     const inputTweet = $(this).serialize();
-    const inputTextOnly = inputTweet.substring(6);
+    const inputTextStartingIndexInSerializedString = 5;
+    const inputTextOnly = inputTweet.substring(inputTextStartingIndexInSerializedString);
 
     if (inputTextOnly === "") {
       alert('You cannot submit an empty tweet.')
