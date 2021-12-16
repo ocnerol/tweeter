@@ -78,23 +78,33 @@ $(document).ready(() => {
 
   //renderTweets(data);
 
+  const loadTweets = () => {
+    console.log('fetching tweets ...');
+    $.ajax('/tweets', { method: 'GET' })
+    .then(tweets => {
+      return renderTweets(tweets);
+    })
+    .catch(error => console.log('error:', error));
+  };
+
   $('#tweet-form').submit(function(event) {
     event.preventDefault();
     const inputTweet = $(this).serialize();
-    console.log(inputTweet);
+
 
     $.ajax({
       url: '/tweets/',
       method: 'POST',
       data: inputTweet
     })
-    .then((response) => {
-      console.log('successfully made post request using Ajax!')
-    })
-    .catch((error) => {
-      console.log('error:', error);
-    });
-    
+      .then((response) => {
+        console.log('successfully made post request using Ajax!');
+ 
+      })
+      .catch((error) => {
+        console.log('error:', error);
+      });
+
 
   });
 });
