@@ -38,7 +38,7 @@ $(document).ready(() => {
     const heartIconElement = `<i class="fas tweet-actions fa-heart"></i>`;
     const tweetActionsElement = `<div class="tweet-actions">${flagIconElement}${retweetIconElement}${heartIconElement}</div>`;
 
-    const createdAtElement = `<p>${created_at}</p>`;
+    const createdAtElement = `<p>${timeago.format(created_at)}</p>`;
     const footerElement = `<footer>${createdAtElement}${tweetActionsElement}</footer>`;
 
     const $tweetArticle = $(`<article class="tweet">${headerElement}${tweetTextElement}${footerElement}</article>`);
