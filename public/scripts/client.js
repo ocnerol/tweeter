@@ -67,11 +67,11 @@ $(document).ready(() => {
     const inputTextOnly = inputTweet.substring(inputTextStartingIndexInSerializedString);
 
     $('#error-message').remove();
-    
+
     if (inputTextOnly === "") {
-      $('#tweet-form').append($('<label for="tweet-text" id="error-message">You cannot submit an empty tweet.</label>'));
+      $('#tweet-form').append($('<label for="tweet-text" id="error-message"><i class="fas fa-exclamation-circle"></i> You cannot submit an empty tweet.</label>'));
     } else if (inputTextOnly.length > 140) {
-      $('#tweet-form').append($('<label for="tweet-text" id="error-message">Your tweet exceeds the maximum character limit :(</label>'));
+      $('#tweet-form').append($('<label for="tweet-text" id="error-message"><i class="fas fa-exclamation-circle"></i> Your tweet exceeds the maximum character limit :(</label>'));
     } else {
       $.ajax({
         url: '/tweets/',
