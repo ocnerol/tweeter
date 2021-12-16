@@ -6,32 +6,46 @@
 
 $(document).ready(() => {
 
+  const tweetData = {
+    "user": {
+      "name": "Newton",
+      "avatars": "https://i.imgur.com/73hZDYK.png",
+        "handle": "@SirIsaac"
+      },
+    "content": {
+        "text": "If I have seen further it is by standing on the shoulders of giants"
+      },
+    "created_at": 1461116232227
+ }
+
   const createTweetElement = (tweetObject) => {
     const { user, content, created_at } = tweetObject;
     const { name, avatars, handle } = user;
     const { text } = content;
     
-    const $avatar = $(`<img class="avatar" src="${avatars}">`);
-    const $name = $(`<p>${name}</p>`);
-    const $leftNav = $(`<div class="left-nav">${$avatar}${$name}</div>`);
+    const avatarElement = `<img class="avatar" src="${avatars}">`;
+    const nameElement = `<p>${name}</p>`;
+    const leftNavElement = `<div class="left-nav">${avatarElement}${nameElement}</div>`;
 
-    const $handle = $(`<h4>${handle}</h4>`);
-    const $rightNav = $(`<div class="right-nav">${$handle}</div>`);
-    const $header = $(`<header>${$leftNav}${$rightNav}</header>`);
+    const handleElement = `<h4>${handle}</h4>`;
+    const rightNavElement = `<div class="right-nav">${handleElement}</div>`;
+    const headerElement = `<header>${leftNavElement}${rightNavElement}</header>`;
 
-    const $tweetText = $(`<p class="tweet-content">${text}</p>`);
+    const tweetTextElement = `<p class="tweet-content">${text}</p>`;
 
-    const $flagIcon = $(`<i class="fas tweet-actions fa-flag"></i>`);
-    const $retweetIcon = $(`<i class="fas tweet-actions fa-retweet"></i>`);
-    const $heartIcon = $(`<i class="fas tweet-actions fa-heart"></i>`);
-    const $tweetActions = $(`<div class="tweet-actions">${$flagIcon}${$retweetIcon}${$heartIcon}</div>`);
+    const flagIconElement = `<i class="fas tweet-actions fa-flag"></i>`;
+    const retweetIconElement = `<i class="fas tweet-actions fa-retweet"></i>`;
+    const heartIconElement = `<i class="fas tweet-actions fa-heart"></i>`;
+    const tweetActionsElement = `<div class="tweet-actions">${flagIconElement}${retweetIconElement}${heartIconElement}</div>`;
 
-    const $createdAt = $(`<p>${created_at}</p>`);
-    const $footer = $(`<footer>${$tweetActions}${$createdAt}</footer>`);
+    const createdAtElement = `<p>${created_at}</p>`;
+    const footerElement = `<footer>${tweetActionsElement}${createdAtElement}</footer>`;
 
-    const $tweetArticle = $(`<article class="tweet">${$header}${$tweetText}${$footer}</article>`);
+    const $tweetArticle = $(`<article class="tweet">${headerElement}${tweetTextElement}${footerElement}</article>`);
 
     return $tweetArticle;
   };
+
+  console.log(createTweetElement(tweetData));
 
 });
