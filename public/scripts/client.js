@@ -103,6 +103,7 @@ $(document).ready(() => {
         data: inputTweet
       })
         .then((response) => {
+          $('.posted-tweets').html('') // clear the html for the posted tweets container so there are no repeat tweets
           loadTweets();
         })
         .catch((error) => {
