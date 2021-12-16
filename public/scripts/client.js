@@ -44,7 +44,7 @@ $(document).ready(() => {
     const $tweetsContainer = $('.posted-tweets');
     const $tweet = tweet => createTweetElement(tweet);
     tweetObjectsArray.forEach(tweet => {
-        $tweetsContainer.append($tweet(tweet))
+      $tweetsContainer.append($tweet(tweet))
     });
   };
 
@@ -66,7 +66,7 @@ $(document).ready(() => {
     const inputTextStartingIndexInSerializedString = 5;
     const inputTextOnly = inputTweet.substring(inputTextStartingIndexInSerializedString);
 
-    $('#error-message').remove();
+    $('#error-message').slideUp("slow");
 
     if (inputTextOnly === "") {
       $('#tweet-form').prepend($('<label for="tweet-text" id="error-message"><i class="fas fa-exclamation-circle"></i> You cannot submit an empty tweet.</label>').hide());
