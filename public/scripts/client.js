@@ -82,7 +82,7 @@ $(document).ready(() => {
     console.log('fetching tweets ...');
     $.ajax('/tweets', { method: 'GET' })
       .then(tweets => {
-        return renderTweets(tweets);
+        return renderTweets(tweets.reverse());
       })
       .catch(error => console.log('error:', error));
   };
@@ -103,7 +103,6 @@ $(document).ready(() => {
         data: inputTweet
       })
         .then((response) => {
-          console.log('successfully made post request using Ajax!');
           loadTweets();
         })
         .catch((error) => {
