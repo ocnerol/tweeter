@@ -70,8 +70,10 @@ $(document).ready(() => {
 
     if (inputTextOnly === "") {
       $('#tweet-form').prepend($('<label for="tweet-text" id="error-message"><i class="fas fa-exclamation-circle"></i> You cannot submit an empty tweet.</label>'));
+      $('#error-message').hide().slideDown("slow");
     } else if (inputTextOnly.length > 140) {
       $('#tweet-form').prepend($('<label for="tweet-text" id="error-message"><i class="fas fa-exclamation-circle"></i> Your tweet exceeds the maximum character limit :(</label>'));
+      $('#error-message').hide().slideDown("slow");
     } else {
       $.ajax({
         url: '/tweets/',
