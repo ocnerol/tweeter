@@ -6,42 +6,12 @@
 
 $(document).ready(() => {
 
-  const tweetData = {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
   }
-  // const data = [
-  //   {
-  //     "user": {
-  //       "name": "Newton",
-  //       "avatars": "https://i.imgur.com/73hZDYK.png"
-  //       ,
-  //       "handle": "@SirIsaac"
-  //     },
-  //     "content": {
-  //       "text": "If I have seen further it is by standing on the shoulders of giants"
-  //     },
-  //     "created_at": 1461116232227
-  //   },
-  //   {
-  //     "user": {
-  //       "name": "Descartes",
-  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
-  //       "handle": "@rd"
-  //     },
-  //     "content": {
-  //       "text": "Je pense , donc je suis"
-  //     },
-  //     "created_at": 1461113959088
-  //   }
-  // ]
+
   const createTweetElement = (tweetObject) => {
     const { user, content, created_at } = tweetObject;
     const { name, avatars, handle } = user;
@@ -55,7 +25,7 @@ $(document).ready(() => {
     const rightNavElement = `<div class="right-nav">${handleElement}</div>`;
     const headerElement = `<header>${leftNavElement}${rightNavElement}</header>`;
 
-    const tweetTextElement = `<p class="tweet-content">${text}</p>`;
+    const tweetTextElement = `<p class="tweet-content">${escape(text)}</p>`;
 
     const flagIconElement = `<i class="fas tweet-actions fa-flag"></i>`;
     const retweetIconElement = `<i class="fas tweet-actions fa-retweet"></i>`;
