@@ -86,6 +86,7 @@ $(document).ready(() => {
       })
       .catch(error => console.log('error:', error));
   };
+  loadTweets();
 
   $('#tweet-form').submit(function(event) {
     event.preventDefault();
