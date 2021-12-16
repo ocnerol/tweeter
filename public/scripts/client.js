@@ -17,31 +17,31 @@ $(document).ready(() => {
     },
     "created_at": 1461116232227
   }
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
+  // const data = [
+  //   {
+  //     "user": {
+  //       "name": "Newton",
+  //       "avatars": "https://i.imgur.com/73hZDYK.png"
+  //       ,
+  //       "handle": "@SirIsaac"
+  //     },
+  //     "content": {
+  //       "text": "If I have seen further it is by standing on the shoulders of giants"
+  //     },
+  //     "created_at": 1461116232227
+  //   },
+  //   {
+  //     "user": {
+  //       "name": "Descartes",
+  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
+  //       "handle": "@rd"
+  //     },
+  //     "content": {
+  //       "text": "Je pense , donc je suis"
+  //     },
+  //     "created_at": 1461113959088
+  //   }
+  // ]
   const createTweetElement = (tweetObject) => {
     const { user, content, created_at } = tweetObject;
     const { name, avatars, handle } = user;
@@ -75,6 +75,26 @@ $(document).ready(() => {
     const $tweet = tweet => createTweetElement(tweet);
     tweetObjectsArray.forEach(tweet => $tweetsContainer.append($tweet(tweet)));
   };
-  
-  renderTweets(data);
+
+  //renderTweets(data);
+
+  $('#tweet-form').submit(function(event) {
+    event.preventDefault();
+    const inputTweet = $(this).serialize();
+    console.log(inputTweet);
+
+    $.ajax({
+      url: '/tweets/',
+      method: 'POST',
+      data: inputTweet
+    })
+    .then((response) => {
+      console.log('successfully made post request using Ajax!')
+    })
+    .catch((error) => {
+      console.log('error:', error);
+    });
+    
+
+  });
 });
