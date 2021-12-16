@@ -41,3 +41,13 @@
 .negative-value {
   color: red;
 }
+
+#error-message {
+  border: 4px solid red;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  padding: 1em;
+  color: red;
+  background-color: #ffcbcb;
+  font-weight: 600;
+}
