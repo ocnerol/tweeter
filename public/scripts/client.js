@@ -99,7 +99,7 @@ $(document).ready(() => {
     })
       .then((response) => {
         console.log('successfully made post request using Ajax!');
- 
+        loadTweets(); 
       })
       .catch((error) => {
         console.log('error:', error);
