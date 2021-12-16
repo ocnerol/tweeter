@@ -39,13 +39,14 @@ $(document).ready(() => {
     const tweetActionsElement = `<div class="tweet-actions">${flagIconElement}${retweetIconElement}${heartIconElement}</div>`;
 
     const createdAtElement = `<p>${created_at}</p>`;
-    const footerElement = `<footer>${tweetActionsElement}${createdAtElement}</footer>`;
+    const footerElement = `<footer>${createdAtElement}${tweetActionsElement}</footer>`;
 
     const $tweetArticle = $(`<article class="tweet">${headerElement}${tweetTextElement}${footerElement}</article>`);
 
     return $tweetArticle;
   };
-
-  console.log(createTweetElement(tweetData));
+  const $tweet = createTweetElement(tweetData)
+  console.log($tweet);
+  $('.posted-tweets').append($tweet);
 
 });
