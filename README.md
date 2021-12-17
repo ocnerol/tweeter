@@ -16,7 +16,7 @@ This app was also designed to be responsive to users with different devices. As 
 # Screenshots
 !["Screenshot of main page with example tweets: Desktop view"](https://github.com/ocnerol/tweeter/blob/main/docs/desktop-example.png?raw=true)
 
-!["Screenshot of main page with example tweets: Mobile view"](https://github.com/ocnerol/tweeter/blob/main/public/images/mobile-phone-example.png?raw=true)
+!["Screenshot of main page with example tweets: Mobile view"](https://github.com/ocnerol/tweeter/blob/main/docs/mobile-phone-example.png?raw=true)
 
 ## Getting Started
 
