@@ -6,7 +6,9 @@
 
 $(document).ready(() => {
   const characterLimit = 140;
-
+  $(".right-nav").on('click', (event) => {
+    $("#tweet-text").focus();
+  })
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
