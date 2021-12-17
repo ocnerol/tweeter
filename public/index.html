@@ -51,7 +51,7 @@
     </div>
   </nav>
 
-  <div id="main-header">
+  <div id="main-container">
     <header id="main-header">
       <div>
         <img src="/images/profile-hex.png">
@@ -59,27 +59,25 @@
       <div>
         <h2 id="header-name">Lorenço Alvarez Navarrete</h2>
       </div>
+    </header>
+
+
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section class="new-tweet">
+        <form id="tweet-form" method="POST" action="/tweets/">
+          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+          <div id="form-bottom">
+            <button id="submit-tweet" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+      <section class="posted-tweets">
+      </section>
+    </main>
+    
   </div>
-  </header>
-
-
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <section class="new-tweet">
-      <form id="tweet-form" method="POST" action="/tweets/">
-        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-        <div id="form-bottom">
-          <button id="submit-tweet" type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
-    <section class="posted-tweets">
-      </div>
-
-    </section>
-  </main>
-
   <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
 </body>
 
