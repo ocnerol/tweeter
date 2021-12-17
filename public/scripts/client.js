@@ -42,15 +42,15 @@ $(document).ready(() => {
   };
 
   const renderTweets = (tweetObjectsArray) => {
+    $('.posted-tweets').html(''); // clear timeline; got idea to put clear timeline here instead of in ajax request thanks to @brenonparry
     const $tweetsContainer = $('.posted-tweets');
     const $tweet = tweet => createTweetElement(tweet);
     tweetObjectsArray.forEach(tweet => {
-      $tweetsContainer.append($tweet(tweet))
+      $tweetsContainer.append($tweet(tweet));
     });
   };
 
   const resetTimeline = () => {
-    $('.posted-tweets').html('') // clear the html for the posted tweets container so there are no repeat tweets
     $("#tweet-text").val(''); // clear the textarea value after submitting tweet
     $(".counter").text(characterLimit); // reset the counter back to characterLimit after submitting tweet
   };
