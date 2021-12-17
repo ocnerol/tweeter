@@ -28,10 +28,7 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-#logo {
-   font-family: "Bungee";
- }
-
+/* new tweet form & timeline styling */
 main {
   margin: 0 5%;
   display: flex;
@@ -41,6 +38,7 @@ main {
   background-color: inherit;
 }
 
+/* header with user name and avatar (header) styling */
 div#main-container {
   width: 100%;
   display: flex;
@@ -48,6 +46,7 @@ div#main-container {
   justify-content: center;
 }
 
+/* responsive design styles for desktop screens */
 @media only screen and (min-width: 1024px) {
   div#main-container {
     flex-direction: row;

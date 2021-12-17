@@ -12,24 +12,24 @@ nav {
   top: auto;
   }
 
+/* right-navbar text/button styling */
 span {
   color: #ffffff;
 }
 
+/* left-navbar Tweeter logo styling */
 #logo {
- font-family: "Bungee";
+ font-family: "Bungee", sans-serif;
  font-size: 2em;
 }
 
-i {
-   color: red;
-}
-
-
-.arrow {
+/* downwards arrow icon in right-nav styling */
+p.arrow {
+  color: red;
   margin: 0px;
 }
 
+/* right-navbar styling */
 .right-nav {
   padding: 0;
   display: flex;
