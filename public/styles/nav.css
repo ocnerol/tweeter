@@ -1,7 +1,8 @@
 nav {
   box-sizing: border-box;
   display: flex;
-  background-color: #4056A1;
+  background-color: #d79a26;
+  background-image: url("../images/redox-02.png");
   height: 120px;
   width: 100vw;
   padding: 1.5em;

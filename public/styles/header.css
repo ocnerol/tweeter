@@ -7,7 +7,8 @@
   align-items: center;
   justify-content: flex-end;
   background-color: #d79a26;
-  background-image: url("../images/checkered-light-emboss.png");
+  background-image: url("../images/redox-02.png");
+  padding-bottom: 1em;
 }
 
 #header-name {
