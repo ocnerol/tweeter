@@ -47,3 +47,25 @@ div#main-container {
   flex-direction: column;
   justify-content: center;
 }
+
+@media only screen and (min-width: 1024px) {
+  /*
+  for div#main-container:
+  flex-display will be row
+  header.main-header will be on the left side
+  - its margins will need to change
+  main.container will be on the right
+  - its top margins will need to increase so the form is visible
+  */
+  div#main-container {
+    flex-direction: row;
+    margin-top: 8em;
+  }
+  
+  div#main-container > * {
+    margin: 0 2em;
+  }
+
+
+
+}
