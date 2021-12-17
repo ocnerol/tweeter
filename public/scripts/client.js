@@ -4,11 +4,16 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
 $(document).ready(() => {
   const characterLimit = 140;
+
+  // set focus to form textarea input field when the 'Write a new tweet' section in navbar is clicked
   $(".right-nav").on('click', (event) => {
     $("#tweet-text").focus();
   })
+
+  // function to escape XSS in tweet form data
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
@@ -44,56 +49,67 @@ $(document).ready(() => {
   };
 
   const renderTweets = (tweetObjectsArray) => {
-    $('.posted-tweets').html(''); // clear timeline; got idea to put clear timeline here instead of in ajax request thanks to @brenonparry
+    // clear timeline; got idea to put clear timeline here instead of in ajax request thanks to @brenonparry
+    $('.posted-tweets').html('');
+    
     const $tweetsContainer = $('.posted-tweets');
     const $tweet = tweet => createTweetElement(tweet);
+
+    // add each tweet object to DOM within tweets container
     tweetObjectsArray.forEach(tweet => {
       $tweetsContainer.append($tweet(tweet));
     });
   };
 
-  const resetTimeline = () => {
+  // fetch tweets stored in database
+  const loadTweets = () => {
+    $.ajax('/tweets', { method: 'GET' })
+      .then(tweets => {
+        return renderTweets(tweets.reverse()); // reverse tweets array since it is sorted from oldest to newest by default
+      })
+      .catch(error => console.log('error:', error));
+  };
+  
+  // fetch all stored tweets upon page load
+  loadTweets();
+
+  const resetForm = () => {
     $("#tweet-text").val(''); // clear the textarea value after submitting tweet
     $(".counter").text(characterLimit); // reset the counter back to characterLimit after submitting tweet
   };
 
-  //renderTweets(data);
-
-  const loadTweets = () => {
-    $.ajax('/tweets', { method: 'GET' })
-      .then(tweets => {
-        return renderTweets(tweets.reverse());
-      })
-      .catch(error => console.log('error:', error));
-  };
-  loadTweets();
-
+  // event handler when a new tweet submission event happens
   $('#tweet-form').submit(function(event) {
     event.preventDefault();
+
     const inputTweet = $(this).serialize();
     const inputText = $(this).children('#tweet-text').val() // figured out how to get text value with help from @lucyshen7
 
+    // slide any existing error message out of view before displaying new error messages or making successful submission
     $('#error-message').slideUp("slow");
-    if (inputText === "") {
+
+    // form validation checks
+    if (inputText === "") { // checks if form input has no content
+      // display relevant error message with a slideDown animation
       $('#tweet-form').prepend($('<label for="tweet-text" id="error-message"><i class="fas fa-exclamation-circle"></i> You cannot submit an empty tweet.</label>').hide());
       $('#error-message').slideDown("slow");
-    } else if (inputText.length > 140) {
+    } else if (inputText.length > 140) { // checks if form input exceeds character limit
+      // display relevant error message with a slideDown animation
       $('#tweet-form').prepend($('<label for="tweet-text" id="error-message"><i class="fas fa-exclamation-circle"></i> Your tweet exceeds the maximum character limit :(</label>').hide());
       $('#error-message').slideDown("slow");
-    } else {
+    } else { // input form passed validation checks, make Ajax POST request to submit tweet to the server
       $.ajax({
         url: '/tweets/',
         method: 'POST',
         data: inputTweet
       })
         .then((response) => {
-          resetTimeline();
-          loadTweets();
+          resetForm();  // reset the form to its original state
+          loadTweets(); // reload all stored tweets (including newly submitted tweet)
         })
         .catch((error) => {
           console.log('error:', error);
         });
     }
-
   });
 });
