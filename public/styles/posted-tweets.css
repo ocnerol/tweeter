@@ -10,6 +10,7 @@
 article.tweet {
   width: 100%;
   border: 4px solid grey;
+  padding: 0.5em;
   margin-bottom: 1em;
 }
 
@@ -27,6 +28,7 @@ article.tweet header {
   background-image: none;
   font-weight: 300;
   padding-right: 1em;
+  font-size: large;
 }
 
 .left-nav {
@@ -40,7 +42,7 @@ article.tweet header {
 }
 
 .avatar {
-  padding-right: 1em;
+  padding-right: 0.5em;
   padding-left: 0.5em;
 }
 
@@ -48,7 +50,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  font-size: large;
+  font-size: medium;
 
 }
 
@@ -60,10 +62,13 @@ footer > * {
 }
 
 p.tweet-content {
-  padding: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  padding-top: 0;
   border-bottom: 4px solid grey;
   font-weight: 300;
-  margin-bottom: 0.50em;
+  margin-bottom: 0.25em;
   color: grey;
 }
 
