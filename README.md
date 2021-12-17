@@ -11,7 +11,7 @@ In its current state, this Single Page App allows a user to submit tweets and ge
 ### Cross-Platform Support
 This app was also designed to be responsive to users with different devices. As such, mobile and desktop users will have similar experiences, with some aesthetic differences. Experience the difference by running the server on your desktop and accessing the app on your mobile device!
 
-## Check back soon for new features!
+### Check back soon for new features!
 
 # Screenshots
 !["Screenshot of main page with example tweets: Desktop view"](https://github.com/ocnerol/tweeter/blob/main/public/images/desktop-example.png?raw=true)
