@@ -60,7 +60,6 @@ $(document).ready(() => {
   //renderTweets(data);
 
   const loadTweets = () => {
-    console.log('fetching tweets ...');
     $.ajax('/tweets', { method: 'GET' })
       .then(tweets => {
         return renderTweets(tweets.reverse());
@@ -72,15 +71,13 @@ $(document).ready(() => {
   $('#tweet-form').submit(function(event) {
     event.preventDefault();
     const inputTweet = $(this).serialize();
-    const inputTextStartingIndexInSerializedString = 5;
-    const inputTextOnly = inputTweet.substring(inputTextStartingIndexInSerializedString);
+    const inputText = $(this).children('#tweet-text').val() // figured out how to get text value with help from @lucyshen7
 
     $('#error-message').slideUp("slow");
-
-    if (inputTextOnly === "") {
+    if (inputText === "") {
       $('#tweet-form').prepend($('<label for="tweet-text" id="error-message"><i class="fas fa-exclamation-circle"></i> You cannot submit an empty tweet.</label>').hide());
       $('#error-message').slideDown("slow");
-    } else if (inputTextOnly.length > 140) {
+    } else if (inputText.length > 140) {
       $('#tweet-form').prepend($('<label for="tweet-text" id="error-message"><i class="fas fa-exclamation-circle"></i> Your tweet exceeds the maximum character limit :(</label>').hide());
       $('#error-message').slideDown("slow");
     } else {
