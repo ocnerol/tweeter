@@ -5,6 +5,7 @@
  */
 
 $(document).ready(() => {
+  const characterLimit = 140;
 
   const escape = function(str) {
     let div = document.createElement("div");
@@ -48,6 +49,12 @@ $(document).ready(() => {
     });
   };
 
+  const resetTimeline = () => {
+    $('.posted-tweets').html('') // clear the html for the posted tweets container so there are no repeat tweets
+    $("#tweet-text").val(''); // clear the textarea value after submitting tweet
+    $(".counter").text(characterLimit); // reset the counter back to characterLimit after submitting tweet
+  };
+
   //renderTweets(data);
 
   const loadTweets = () => {
@@ -81,7 +88,7 @@ $(document).ready(() => {
         data: inputTweet
       })
         .then((response) => {
-          $('.posted-tweets').html('') // clear the html for the posted tweets container so there are no repeat tweets
+          resetTimeline();
           loadTweets();
         })
         .catch((error) => {
