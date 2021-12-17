@@ -6,8 +6,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  background-color: #DBC762;
-  background-image: url("../images/honey-im-subtle.png");
+  background-color: #d79a26;
+  background-image: url("../images/checkered-light-emboss.png");
 }
 
 #header-name {
