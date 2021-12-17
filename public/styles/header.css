@@ -12,8 +12,9 @@
 
 #header-name {
   padding: 0px;
-  margin-top: 0px;
+  margin: 0.5em;
   font-weight: normal;
+  font-size: 1.60rem;
 }
 
 #avatar {
