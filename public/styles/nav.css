@@ -18,6 +18,7 @@ nav {
   border: none;
   background-color: inherit;
   color: #ffffff;
+  cursor: pointer;
 }
 
 /* left-navbar Tweeter logo styling */
