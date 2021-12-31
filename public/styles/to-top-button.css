@@ -1,3 +1,9 @@
 #to-top {
   cursor: pointer;
+  border-radius: 100px;
+  width: fit-content;
+  padding: 0.5% 1%;
+  align-self: flex-end;
+  position: fixed;
+  bottom: 1%;
 }
