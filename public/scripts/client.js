@@ -8,9 +8,17 @@
 $(document).ready(() => {
   const characterLimit = 140;
 
-  // set focus to form textarea input field when the 'Write a new tweet' section in navbar is clicked
-  $(".right-nav").on('click', (event) => {
-    $("#tweet-text").focus();
+  // toggle new-tweet form hiding when clicking 'Write a new tweet' in right-navbar
+  // and set focus on textarea in form
+  $(".toggle-compose").on('click', (event) => {
+    if ($('.new-tweet').hasClass('hidden')) {
+      $('.new-tweet').removeClass('hidden');
+      $('.new-tweet').slideDown('slow');
+      $("#tweet-text").focus();
+    } else {
+      $('.new-tweet').slideUp('slow');
+      $('.new-tweet').addClass('hidden');
+    }
   })
 
   // function to escape XSS in tweet form data
