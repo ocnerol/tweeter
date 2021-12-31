@@ -6,4 +6,7 @@
   align-self: flex-end;
   position: fixed;
   bottom: 1%;
+  color: #ffffff;
+  background-color: red;
+  border: none;
 }
