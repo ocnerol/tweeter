@@ -10,10 +10,13 @@ nav {
   position: fixed;
   z-index: 1;
   top: auto;
+  color: #ffffff;
   }
 
 /* right-navbar text/button styling */
-span {
+.toggle-compose{
+  border: none;
+  background-color: inherit;
   color: #ffffff;
 }
 
@@ -35,5 +38,4 @@ p.arrow {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
