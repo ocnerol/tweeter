@@ -13,3 +13,7 @@
   background-color: red;
   border: none;
 }
+
+html {
+  scroll-behavior: smooth;
+}

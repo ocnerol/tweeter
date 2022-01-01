@@ -20,6 +20,11 @@ $(document).ready(() => {
     }
   });
 
+  $('#to-top').on('click', () => {
+    $(document).scrollTop(0);
+    $("#tweet-text").focus();
+  })
+
   // toggle new-tweet form hiding when clicking 'Write a new tweet' in right-navbar
   // and set focus on textarea in form
   $(".toggle-compose").on('click', (event) => {
