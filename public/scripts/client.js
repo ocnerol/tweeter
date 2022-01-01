@@ -7,6 +7,14 @@
 
 $(document).ready(() => {
   const characterLimit = 140;
+  const tenPercentWindowHeight = ($(window).height() * .10);
+  $('#to-top').hide();
+  
+  $(window).scroll(function() {
+    if ($(document).scrollTop() > tenPercentWindowHeight) {
+
+    }
+  });
 
   // toggle new-tweet form hiding when clicking 'Write a new tweet' in right-navbar
   // and set focus on textarea in form
