@@ -9,10 +9,14 @@ $(document).ready(() => {
   const characterLimit = 140;
   const tenPercentWindowHeight = ($(window).height() * .10);
   $('#to-top').hide();
-  
+
   $(window).scroll(function() {
     if ($(document).scrollTop() > tenPercentWindowHeight) {
-
+      $('#to-top').show();
+      $('.right-nav').hide();
+    } else {
+      $('#to-top').hide();
+      $('.right-nav').show();
     }
   });
 
