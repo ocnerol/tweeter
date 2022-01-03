@@ -1,14 +1,14 @@
 #to-top {
   cursor: pointer;
-  border-radius: 100px;
-  width: 1.6em;
-  height: 1.6em;
+  border-radius: 100%;
+  width: 2.5em;
+  height: 2.5em;
   font-size: 1.2em;
   padding: 0%;
   align-self: flex-end;
   position: fixed;
   bottom: 1%;
-  right: 4%;
+  right: 1%;
   color: #ffffff;
   background-color: red;
   border: none;
