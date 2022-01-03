@@ -7,6 +7,8 @@
 
 $(document).ready(() => {
   const characterLimit = 140;
+  
+  // used for toggling the to-top button's visibility
   const tenPercentWindowHeight = ($(window).height() * .10);
   $('#to-top').hide();
 
