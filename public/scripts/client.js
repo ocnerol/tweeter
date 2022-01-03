@@ -13,10 +13,10 @@ $(document).ready(() => {
   $(window).scroll(function() {
     if ($(document).scrollTop() > tenPercentWindowHeight) {
       $('#to-top').show();
-      $('.right-nav').hide();
+      $('#navbar-compose').hide();
     } else {
       $('#to-top').hide();
-      $('.right-nav').show();
+      $('#navbar-compose').show();
     }
   });
 
