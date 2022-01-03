@@ -22,6 +22,8 @@ $(document).ready(() => {
 
   $('#to-top').on('click', () => {
     $(document).scrollTop(0);
+    $('.new-tweet').slideDown('slow');
+    $('.new-tweet').removeClass('hidden');
     $("#tweet-text").focus();
   })
 
