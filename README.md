@@ -14,10 +14,10 @@ This app was also designed to be responsive to users with different devices. As 
 ### Check back soon for new features!
 
 # Screenshots
-### Desktop view of timeline
+### Desktop timeline view
 !["Screenshot of main page with example tweets: Desktop view"](https://github.com/ocnerol/tweeter/blob/main/docs/desktop-example.png?raw=true)
 
-### Mobile view of timeline
+### Mobile timeline view
 !["Screenshot of main page with example tweets: Mobile view"](https://github.com/ocnerol/tweeter/blob/main/docs/mobile-phone-example.png?raw=true)
 
 ## Getting Started
